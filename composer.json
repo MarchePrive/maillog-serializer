@@ -1,0 +1,12 @@
+{
+    "name": "marche-prive/maillog-serializer",
+    "description": "Serialize data in maillog format for easier log inspection",
+    "type": "library",
+    "license": "Proprietary",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "MarchePrive\\MaillogSerializer\\": "src/"
+        }
+    }
+}
