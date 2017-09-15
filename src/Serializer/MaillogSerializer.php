@@ -35,6 +35,6 @@ class MaillogSerializer
      */
     public function serialize(MailloggableInterface $object)
     {
-        return self::fromArray($object->toLog);
+        return self::fromArray($object->toLog());
     }
 }
