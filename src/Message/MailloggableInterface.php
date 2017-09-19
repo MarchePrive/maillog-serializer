@@ -5,7 +5,7 @@ namespace MarchePrive\MaillogSerializer\Message;
 /**
  * Interface LoggableInterface.
  */
-interface LoggableInterface
+interface MailloggableInterface
 {
     /**
      * @return array
