@@ -2,6 +2,8 @@
 
 namespace MarchePrive\MaillogSerializer\Serializer;
 
+use MarchePrive\MaillogSerializer\Message\MailloggableInterface;
+
 /**
  * Class MaillogSerializer.
  */
@@ -14,7 +16,7 @@ class MaillogSerializer
      *
      * @return string
      */
-    public static function serialize(array $entry)
+    public static function fromArray(array $entry)
     {
         $lines = [];
         foreach ($entry as $name => $value) {
@@ -22,5 +24,17 @@ class MaillogSerializer
         }
 
         return implode(', ', $lines);
+    }
+
+    /**
+     * Serialize an object.
+     *
+     * @param MailloggableInterface $object
+     *
+     * @return string
+     */
+    public function serialize(MailloggableInterface $object)
+    {
+        return self::fromArray($object->toLog());
     }
 }

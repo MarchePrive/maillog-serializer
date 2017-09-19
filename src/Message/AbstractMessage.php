@@ -2,14 +2,14 @@
 
 namespace MarchePrive\MaillogSerializer\Message;
 
-use MarchePrive\MaillogSerializer\Message\LoggableInterface;
+use MarchePrive\MaillogSerializer\Message\MailloggableInterface;
 use MarchePrive\MaillogSerializer\Serializer\MaillogSerializer;
 
 /**
  * Class AbstractEntry.
  * Base Abstract Class for Log entry objects.
  */
-abstract class AbstractMessage implements LoggableInterface
+abstract class AbstractMessage implements MailloggableInterface
 {
     /**
      * Generates a maillog formatted view of the object.
@@ -18,6 +18,6 @@ abstract class AbstractMessage implements LoggableInterface
      */
     public function log()
     {
-        return MaillogSerializer::serialize($this->toLog());
+        return MaillogSerializer::fromArray($this->toLog());
     }
 }
